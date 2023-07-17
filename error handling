@@ -1,0 +1,27 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
+
+contract MyContract {
+
+    uint public voter_age; 
+    function votingEligibility(uint age) public {
+        require(age>18,"not eligible for voting ");
+        voter_age = age;
+
+    }
+
+    function children(uint age) public pure {
+        assert(age<=14);
+     
+    }
+    
+    uint public old_age;
+    function old(uint age) public {
+        if (age<60){
+            revert("you are not old");
+
+        }else old_age=age;
+    }
+   
+}
+    
